@@ -31,7 +31,7 @@ const Layout = () => {
             ⛴️ Ship Maintenance Dashboard
           </h1>
 
-          <nav className="flex items-center gap-8 flex-wrap">
+          <nav className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 w-full sm:w-auto">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -71,13 +71,13 @@ const Layout = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow w-screen h-screen mx-auto px-4 py-6 relative z-10">
+      <main className="relative w-full flex-grow px-4 py-6 z-10">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 opacity-90 w-screen h-screen object-cover z-[-1]"
+          className="absolute inset-0 w-full h-full object-cover opacity-90 z-[-1]"
         >
           <source src={Banner} type="video/mp4" loading="lazy" />
         </video>
