@@ -7,19 +7,23 @@ A simple React dashboard to manage ships, components, maintenance jobs, and view
 ## 📦 Setup Instructions
 
 1. Clone the repository:
+  ```
+    https://github.com/Rahul9672/ENTNT-Technical-Assignment
 
 2. Install dependencies:
+   ```
+   cd ENTNT-Technical-Assignment
    npm install
 
 3. Start the project:
+ ```
    npm run dev
 
-
 4. Open in browser:
-   ```
+ ```
    http://localhost:5174/
-   ```
-
+   
+`
 ---
 
 ## 🧾 Login Users (Predefined)
