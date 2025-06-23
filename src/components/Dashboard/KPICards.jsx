@@ -1,5 +1,3 @@
-// src/components/Dashboard/KPICards.jsx
-
 import { useEffect, useState } from "react";
 import { getData } from "../../utils/localStorageUtils";
 import { GiBattleship } from "react-icons/gi";

@@ -80,7 +80,7 @@ const JobForm = ({ open, onClose, jobs }) => {
     ? components.filter((comp) => comp.shipId === selectedShipId)
     : [];
 
-  if (!open || ships.length === 0 || components.length === 0) return null; 
+  if (!open || ships.length === 0 || components.length === 0) return null;
 
   return (
     <>
@@ -142,9 +142,7 @@ const JobForm = ({ open, onClose, jobs }) => {
                 }`}
               >
                 <option value="" disabled>
-                  {formData.shipId
-                    ? "Choose a component"
-                    : "Select your ship"}
+                  {formData.shipId ? "Choose a component" : "Select your ship"}
                 </option>
                 {filteredComponents.map((comp) => (
                   <option key={comp.id} value={comp.id}>

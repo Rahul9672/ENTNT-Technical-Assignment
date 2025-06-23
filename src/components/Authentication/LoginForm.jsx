@@ -53,7 +53,7 @@ const LoginForm = () => {
           Login to continue
         </p>
         <h2 className="text-indigo-400 font-semibold text-xl mb-4 text-left">
-          Welcome Back!
+          Radhika Chaubey
         </h2>
 
         {error && (

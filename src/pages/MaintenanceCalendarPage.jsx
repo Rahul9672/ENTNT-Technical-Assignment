@@ -1,4 +1,4 @@
-import JobCalendar from '../components/Jobs/JobCalendar';
+import JobCalendar from "../components/Jobs/JobCalendar";
 
 const MaintenanceCalendarPage = () => {
   return (

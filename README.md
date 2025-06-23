@@ -21,9 +21,8 @@ A simple React dashboard to manage ships, components, maintenance jobs, and view
 
 4. Open in browser:
  ```
-   http://localhost:5174/
+   - http://localhost:5174/`
    
-`
 ---
 
 ## 🧾 Login Users (Predefined)
@@ -85,3 +84,4 @@ When you run the app, the following default data is added:
 - localStorage (as mock database)
 
 ---# ENTNT-Technical-Assignment
+```You see on live - https://entnt-technical-assignment-mauve.vercel.app/login`

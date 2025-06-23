@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'react';
-import { useComponents } from '../../contexts/ComponentsContext';
-import { getData } from '../../utils/localStorageUtils';
+import { useState, useEffect } from "react";
+import { useComponents } from "../../contexts/ComponentsContext";
+import { getData } from "../../utils/localStorageUtils";
 
 const ComponentForm = ({ open, onClose, component, shipId }) => {
   const { addComponent, updateComponent } = useComponents();
-  const ships = getData('ships') || [];
+  const ships = getData("ships") || [];
 
   const [formData, setFormData] = useState({
-    name: '',
-    serialNumber: '',
-    installDate: '',
-    lastMaintenanceDate: '',
-    shipId: shipId || ''
+    name: "",
+    serialNumber: "",
+    installDate: "",
+    lastMaintenanceDate: "",
+    shipId: shipId || "",
   });
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarMessage, setSnackbarMessage] = useState("");
 
   useEffect(() => {
     if (!open) return;
@@ -24,18 +24,18 @@ const ComponentForm = ({ open, onClose, component, shipId }) => {
       setFormData(component);
     } else {
       setFormData({
-        name: '',
-        serialNumber: '',
-        installDate: '',
-        lastMaintenanceDate: '',
-        shipId: shipId || ''
+        name: "",
+        serialNumber: "",
+        installDate: "",
+        lastMaintenanceDate: "",
+        shipId: shipId || "",
       });
     }
   }, [component, shipId, open]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -70,7 +70,7 @@ const ComponentForm = ({ open, onClose, component, shipId }) => {
           onClick={(e) => e.stopPropagation()}
         >
           <h2 className="text-center font-bold text-2xl mt-2">
-            {component ? 'Edit Component' : 'Add New Component'}
+            {component ? "Edit Component" : "Add New Component"}
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-2 mt-4">
@@ -84,16 +84,22 @@ const ComponentForm = ({ open, onClose, component, shipId }) => {
                   required
                   className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
                 >
-                  <option value="" disabled>Select a ship</option>
-                  {ships.map(ship => (
-                    <option key={ship.id} value={ship.id}>{ship.name}</option>
+                  <option value="" disabled>
+                    Select a ship
+                  </option>
+                  {ships.map((ship) => (
+                    <option key={ship.id} value={ship.id}>
+                      {ship.name}
+                    </option>
                   ))}
                 </select>
               </label>
             )}
 
             <label className="block">
-              <span className="text-gray-900 font-semibold">Component Name</span>
+              <span className="text-gray-900 font-semibold">
+                Component Name
+              </span>
               <input
                 type="text"
                 name="name"
@@ -117,7 +123,9 @@ const ComponentForm = ({ open, onClose, component, shipId }) => {
             </label>
 
             <label className="block">
-              <span className="text-gray-900 font-semibold">Installation Date</span>
+              <span className="text-gray-900 font-semibold">
+                Installation Date
+              </span>
               <input
                 type="date"
                 name="installDate"
@@ -129,7 +137,9 @@ const ComponentForm = ({ open, onClose, component, shipId }) => {
             </label>
 
             <label className="block">
-              <span className="text-gray-900 font-semibold">Last Maintenance Date</span>
+              <span className="text-gray-900 font-semibold">
+                Last Maintenance Date
+              </span>
               <input
                 type="date"
                 name="lastMaintenanceDate"
@@ -152,7 +162,7 @@ const ComponentForm = ({ open, onClose, component, shipId }) => {
                 type="submit"
                 className="px-3 py-1 bg-indigo-900 text-white rounded-md font-medium hover:bg-indigo-800 transition"
               >
-                {component ? 'Update' : 'Add'}
+                {component ? "Update" : "Add"}
               </button>
             </div>
           </form>
